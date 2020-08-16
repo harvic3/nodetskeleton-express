@@ -1,4 +1,4 @@
-import { IResult } from "../../application/shared/result/Result.interface";
+import { IResult } from "result-tsk";
 import { Router, Response, RouterType } from "../../infrastructure/server/CoreModules";
 
 export default class BaseController {

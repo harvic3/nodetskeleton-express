@@ -53,8 +53,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "mapper-tsk": "^1.0.4",
     "moment": "^2.27.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "resources-tsk": "^1.0.7",
+    "result-tsk": "^1.0.4",
+    "validator-tsk": "^1.0.6"
   },
   "husky": {
     "hooks": {
