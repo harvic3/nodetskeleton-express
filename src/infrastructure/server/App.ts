@@ -1,20 +1,22 @@
-import config from "../config";
 import { Server, BodyParser, Application } from "../server/CoreModules";
 import BaseController from "../../adapters/controllers/BaseController";
-import localization from "../middlewares/localization";
-import handleError from "../middlewares/handleError";
+import resources from "../../application/shared/locals/index";
+import localization from "../middleware/localization";
+import handleError from "../middleware/handleError";
+import config from "../config";
 
 export default class App {
   public app: Application;
 
   constructor(controllers: BaseController[]) {
     this.app = Server();
-    this.LoadMiddlewares();
+    this.LoadMiddleware();
     this.LoadControllers(controllers);
     this.LoadHandleError();
+    this.Settings();
   }
 
-  public LoadMiddlewares(): void {
+  public LoadMiddleware(): void {
     this.app.use(BodyParser.json());
     this.app.use(localization());
   }
@@ -29,9 +31,24 @@ export default class App {
     this.app.use(handleError());
   }
 
+  private Settings(): void {
+    resources.SetDefaultLanguage(config.params.defaultLang);
+  }
+
   public Listen(): void {
     this.app.listen(config.server.port, () => {
-      console.log(`Server running on ${config.server.host}:${config.server.port}`);
+      console.log(
+        `Server running on ${config.server.root}${config.server.host}:${config.server.port}`,
+      );
     });
+  }
+
+  private RunServices(): void {
+    // Initialize db and other services here and once started run Listen
+    this.Listen();
+  }
+
+  public Start(): void {
+    this.RunServices();
   }
 }

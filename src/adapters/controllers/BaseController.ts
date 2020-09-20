@@ -1,5 +1,6 @@
-import { IResult } from "result-tsk";
+export { Request, Response, NextFunction } from "../../infrastructure/server/CoreModules";
 import { Router, Response, RouterType } from "../../infrastructure/server/CoreModules";
+import { IResult } from "result-tsk";
 
 export default class BaseController {
   constructor() {
