@@ -2,7 +2,7 @@ import { BaseUseCase, IResultT, ResultT } from "../../../../shared/useCase/BaseU
 import { IHealthProvider } from "../../providerContracts/IHealthProvider";
 
 export class PongUseCase extends BaseUseCase {
-  constructor(private healthProvider: IHealthProvider){
+  constructor(private healthProvider: IHealthProvider) {
     super();
   }
 
