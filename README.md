@@ -22,6 +22,14 @@ The user stories must be in the `src/application` path of our solution, there we
 
 <div style="text-align:center"> <img src="https://i.ibb.co/t2mHGmC/Node-Tskeleton.png" alt="Node-Tskeleton" border="10"> </div>
 
+### Observations 👀
+
+- If your application has no `roles`, then there's no mess, it's just `modules`. ;)
+
+- But taking into consideration that if the roles are not yet defined in your application, `the best option` would be to follow a `dynamic role strategy` based on `permissions` and `each use case within the application would be a specific permission` that would feed the strategy of dynamic roles.
+
+- Note that you can `repeat` modules between `roles`, because a `module can be used by different roles`, because if they are different roles then the use cases should also be different, otherwise those users would have the same role.
+
 ## Code of Conduct 👌
 
 The Contributor Covenant Code of Conduct for this project is based on Covenant Contributor which you can find at the following link:
