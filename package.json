@@ -1,5 +1,5 @@
 {
-  "name": "nodetskeleton-expressjs",
+  "name": "nodetskeleton-express",
   "version": "1.0.0",
   "description": "A skeleton for use typescript with NodeJs",
   "main": "./dist/index.js",
